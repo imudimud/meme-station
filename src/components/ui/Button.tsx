@@ -30,9 +30,10 @@ export const Button = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.02, boxShadow: '0 0 15px rgba(30, 144, 255, 0.5)' }}
+      whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      onClick={props.onClick}
       {...props}
     >
       {children}

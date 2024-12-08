@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { BottomNav } from '../components/layout/BottomNav';
 import { EncyclopediaList } from '../components/encyclopedia/EncyclopediaList';
 import { motion } from 'framer-motion';
@@ -44,21 +44,21 @@ const mockEntries = [
   },
   {
     id: '3',
-    title: 'DeFi Protocols Explained',
-    description: 'Understanding decentralized finance protocols, yield farming, liquidity pools, and smart contracts.',
-    category: 'DeFi Explained',
+    title: 'Cryptocurrency Mining',
+    description: 'A detailed explanation of cryptocurrency mining, including the process, hardware, and software requirements.',
+    category: 'Cryptocurrency',
     difficulty: 'intermediate' as const,
-    lastUpdated: '3 days ago',
+    lastUpdated: '1 month ago',
     stats: {
-      views: 12340,
-      likes: 765,
-      saves: 432
+      views: 9000,
+      likes: 600,
+      saves: 300
     },
     contributors: [
       { name: 'David Lee', avatar: '/avatars/david.jpg' },
-      { name: 'Lisa Wang', avatar: '/avatars/lisa.jpg' }
+      { name: 'Emily Chen', avatar: '/avatars/emily.jpg' }
     ],
-    tags: ['defi', 'yield-farming', 'liquidity', 'smart-contracts']
+    tags: ['cryptocurrency', 'mining', 'blockchain', 'technology']
   }
 ];
 
@@ -94,7 +94,7 @@ const categories = [
 ];
 
 export const Encyclopedia = () => {
-  const [selectedCategory, setSelectedCategory] = useState('All Articles');
+  const [selectedCategory, setSelectedCategory] = React.useState('All Articles');
 
   return (
     <div className="min-h-screen bg-secondary-black text-white pb-20">

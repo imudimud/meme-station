@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import * as React from 'react';
 import { motion } from 'framer-motion';
 import { Card } from '../components/ui/Card';
 import { PriceCard } from '../components/crypto/PriceCard';
 import { MemeCard } from '../components/meme/MemeCard';
 import { Header } from '../components/layout/Header';
 import { Button } from '../components/ui/Button';
-import { Plus, ChevronRight, Trophy, Diamond, Rocket, TrendingUp, Users, Star } from 'lucide-react';
+import { Plus, Diamond, Rocket, Users, Trophy } from 'lucide-react';
 import { PortfolioChart } from '../components/portfolio/PortfolioChart';
 import { AssetAllocation } from '../components/portfolio/AssetAllocation';
 import { AddAssetModal } from '../components/portfolio/AddAssetModal';
-import { BottomNav } from '../components/layout/BottomNav';
 import { HodlerCard } from '../components/crypto/HodlerCard';
 import { AchievementBadge } from '../components/profile/AchievementBadge';
 
@@ -95,8 +94,8 @@ const itemVariants = {
 };
 
 export const Dashboard = () => {
-  const [isAddAssetModalOpen, setIsAddAssetModalOpen] = useState(false);
-  const [selectedTimeframe, setSelectedTimeframe] = useState('1D');
+  const [isAddAssetModalOpen, setIsAddAssetModalOpen] = React.useState(false);
+  const [selectedTimeframe, setSelectedTimeframe] = React.useState('1D');
 
   const timeframes = ['1H', '1D', '1W', '1M', '1Y', 'ALL'];
 
@@ -104,15 +103,7 @@ export const Dashboard = () => {
     <div className="min-h-screen bg-secondary-black text-white pb-20">
       <Header 
         title="Dashboard" 
-        subtitle={
-          <div className="flex items-center space-x-2">
-            <span>Welcome back, Astronaut!</span>
-            <div className="flex items-center text-primary-blue">
-              <Trophy className="w-4 h-4 mr-1" />
-              <span>Level 42</span>
-            </div>
-          </div>
-        }
+        subtitle="Welcome back, Astronaut!"
         action={
           <Button 
             variant="outline" 
@@ -166,7 +157,7 @@ export const Dashboard = () => {
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-orbitron text-xl text-primary-blue">Asset Allocation</h2>
-              <Button variant="outline" size="sm">Manage</Button>
+              <Button variant="outline" size="sm" onClick={() => {}}>Manage</Button>
             </div>
             <AssetAllocation />
           </Card>
@@ -177,11 +168,15 @@ export const Dashboard = () => {
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-orbitron text-xl text-primary-blue">HODLer Status</h2>
-              <Button variant="outline" size="sm">View All</Button>
+              <Button variant="outline" size="sm" onClick={() => {}}>View All</Button>
             </div>
             <div className="space-y-4">
               {mockHodlers.map((hodler) => (
-                <HodlerCard key={hodler.username} {...hodler} />
+                <HodlerCard 
+                  key={hodler.username} 
+                  {...hodler} 
+                  trend={hodler.trend as 'up' | 'down'}
+                />
               ))}
             </div>
           </Card>
@@ -192,7 +187,7 @@ export const Dashboard = () => {
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-orbitron text-xl text-primary-blue">Recent Achievements</h2>
-              <Button variant="outline" size="sm">View All</Button>
+              <Button variant="outline" size="sm" onClick={() => {}}>View All</Button>
             </div>
             <div className="grid grid-cols-3 gap-4">
               {mockAchievements.map((achievement) => (
@@ -207,7 +202,7 @@ export const Dashboard = () => {
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-orbitron text-xl text-primary-blue">Top Movers</h2>
-              <Button variant="outline" size="sm">View All</Button>
+              <Button variant="outline" size="sm" onClick={() => {}}>View All</Button>
             </div>
             <div className="space-y-4">
               {mockCryptos.map(crypto => (
@@ -224,7 +219,7 @@ export const Dashboard = () => {
           <Card className="p-6">
             <div className="flex justify-between items-center mb-4">
               <h2 className="font-orbitron text-xl text-primary-blue">Trending Memes</h2>
-              <Button variant="outline" size="sm">View All</Button>
+              <Button variant="outline" size="sm" onClick={() => {}}>View All</Button>
             </div>
             <div className="space-y-4">
               {mockMemes.map((meme) => (

@@ -21,6 +21,7 @@ export const ParticleBackground = () => {
     const particles: Array<{
       x: number;
       y: number;
+      baseSize: number;
       size: number;
       speedX: number;
       speedY: number;
@@ -35,6 +36,7 @@ export const ParticleBackground = () => {
       return {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
+        baseSize: Math.random() * 3 + 1,
         size: Math.random() * 3 + 1,
         speedX: Math.random() * 0.5 - 0.25,
         speedY: Math.random() * 0.5 - 0.25,
@@ -95,11 +97,11 @@ export const ParticleBackground = () => {
         }
 
         // Pulsing effect
-        particle.size = particle.size + Math.sin(Date.now() * particle.pulse) * 0.5;
+        particle.size = Math.max(0.1, particle.baseSize + Math.sin(Date.now() * particle.pulse) * 0.5);
 
         // Draw particle
         ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+        ctx.arc(particle.x, particle.y, Math.abs(particle.size), 0, Math.PI * 2);
         ctx.fillStyle = `${particle.color}${Math.floor(particle.alpha * 255).toString(16).padStart(2, '0')}`;
         ctx.fill();
 

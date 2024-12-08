@@ -33,7 +33,7 @@ function App() {
             } 
           />
           <Route 
-            path="/community" 
+            path="/app/community" 
             element={
               <AppLayout>
                 <Community />
@@ -41,7 +41,7 @@ function App() {
             } 
           />
           <Route 
-            path="/encyclopedia" 
+            path="/app/encyclopedia" 
             element={
               <AppLayout>
                 <Encyclopedia />
@@ -49,7 +49,7 @@ function App() {
             } 
           />
           <Route 
-            path="/news" 
+            path="/app/news" 
             element={
               <AppLayout>
                 <News />
@@ -57,7 +57,7 @@ function App() {
             } 
           />
           <Route 
-            path="/profile" 
+            path="/app/profile" 
             element={
               <AppLayout>
                 <Profile />

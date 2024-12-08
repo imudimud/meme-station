@@ -61,7 +61,15 @@ export const NewsCard: React.FC<NewsCardProps> = ({
           {/* Source and Time */}
           <div className="flex items-center justify-between text-xs text-accent-silver mb-2">
             <span className="font-medium">{source}</span>
-            <span>{formatDistanceToNow(new Date(publishedAt))} ago</span>
+            <span>
+              {(() => {
+                try {
+                  return formatDistanceToNow(new Date(publishedAt)) + ' ago';
+                } catch (error) {
+                  return 'Recently';
+                }
+              })()}
+            </span>
           </div>
 
           {/* Title */}

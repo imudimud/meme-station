@@ -5,10 +5,10 @@ import { motion } from 'framer-motion';
 
 const navItems = [
   { icon: Home, label: 'Home', path: '/app' },
-  { icon: Users, label: 'Community', path: '/community' },
-  { icon: BookOpen, label: 'Encyclopedia', path: '/encyclopedia' },
-  { icon: Newspaper, label: 'News', path: '/news' },
-  { icon: User, label: 'Profile', path: '/profile' },
+  { icon: Users, label: 'Community', path: '/app/community' },
+  { icon: BookOpen, label: 'Encyclopedia', path: '/app/encyclopedia' },
+  { icon: Newspaper, label: 'News', path: '/app/news' },
+  { icon: User, label: 'Profile', path: '/app/profile' },
 ];
 
 export const BottomNav = () => {

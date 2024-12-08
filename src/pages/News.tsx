@@ -11,21 +11,29 @@ const mockNews = [
     id: '1',
     title: 'Bitcoin Surges Past $70,000 as Institutional Adoption Grows',
     source: 'CryptoNews',
-    timestamp: '2 hours ago',
+    publishedAt: '2024-12-09T00:36:42+03:00',
     imageUrl: 'https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=400&h=300',
     summary: 'Bitcoin reaches new all-time high as major institutions announce significant investments in cryptocurrency...',
-    url: '#',
-    tags: ['Bitcoin', 'Market', 'Institutional']
+    category: 'trending',
+    engagement: {
+      likes: 1200,
+      comments: 450,
+      saves: 280
+    }
   },
   {
     id: '2',
     title: 'New DeFi Protocol Promises Revolutionary Yield Farming',
     source: 'DeFi Daily',
-    timestamp: '5 hours ago',
+    publishedAt: '2024-12-08T21:36:42+03:00',
     imageUrl: 'https://images.unsplash.com/photo-1620321023374-d1a68fbc720d?w=400&h=300',
     summary: 'A new decentralized finance protocol has emerged, offering innovative approaches to yield farming...',
-    url: '#',
-    tags: ['DeFi', 'Yield Farming', 'Innovation']
+    category: 'latest',
+    engagement: {
+      likes: 850,
+      comments: 320,
+      saves: 150
+    }
   },
 ];
 
